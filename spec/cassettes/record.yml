@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://staging-oauth.dossia.org/dossia-restful-api/services/v3.0/records
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization: 
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Feb 2013 18:13:47 GMT
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding,User-Agent
+      Content-Length:
+      - '1176'
+      Content-Type:
+      - application/xml
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<api:container xmlns:api=\"http://www.dossia.org/v2.0/api\"\n
+        \              xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"\n               xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n
+        \              xsi:schemaLocation=\"http://www.dossia.org/v2.0/api http://www.dossia.org/v2.0/api/container.xsd\">\n
+        \  <api:document id=\"qO7k9WDv3VSDPEwSmZ3kLYQOFlGuUcc2\">\n      <api:payload>\n
+        \        <phr:Participant type=\"Primary\">\n            <phr:FullName>XIOMARA
+        D BROWN</phr:FullName>\n            <phr:FirstName>XIOMARA</phr:FirstName>\n
+        \           <phr:MiddleName>D</phr:MiddleName>\n            <phr:LastName>BROWN</phr:LastName>\n
+        \           <phr:DateOfBirth>1931-06-18</phr:DateOfBirth>\n            <phr:Gender>Female</phr:Gender>\n
+        \           <phr:Address>\n               <phr:StreetAddress1>370 HILL ST</phr:StreetAddress1>\n
+        \              <phr:City>ALGER</phr:City>\n               <phr:State>OH</phr:State>\n
+        \              <phr:PostalCode>45812</phr:PostalCode>\n            </phr:Address>\n
+        \           <phr:Contact type=\"Email\">Xiomara@dossia.org</phr:Contact>\n
+        \        </phr:Participant>\n      </api:payload>\n   </api:document>\n</api:container>"
+    http_version: 
+  recorded_at: Sat, 02 Feb 2013 18:13:46 GMT
+recorded_with: VCR 2.4.0
