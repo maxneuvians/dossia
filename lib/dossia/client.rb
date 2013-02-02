@@ -1,4 +1,5 @@
 require 'dossia/client'
+require 'dossia/client/documents'
 require 'dossia/client/users'
 
 require 'oauth'
@@ -11,6 +12,7 @@ module Dossia
 
     DOSSIA_URL = ENV['DOSSIA_URL'] || 'https://staging-oauth.dossia.org'
 
+    include Dossia::Documents
     include Dossia::Users
 
     def access_token
@@ -41,9 +43,17 @@ module Dossia
         @access_token = OAuth::AccessToken.new( @consumer, Dossia.configuration[ :oauth_token ], Dossia.configuration[ :oauth_token_secret ] )
       end
 
-      @record = Hashie::Mash.new get('/records')
+      @record = Hashie::Mash.new get('/records')['document']
 
     end 
+
+    def method_missin( name, *args )
+
+      name = name.to_s
+      super unless name =~ /get_/
+      get_#{name}( args )
+
+    end
 
     def delete( path, params = nil )
       path = "#{path}?#{params.map{|k,v|"#{k}=#{v}"}.join('&')}" if params
@@ -70,7 +80,7 @@ module Dossia
     protected
 
     def parse( resp )
-      Hash.from_xml( resp.body )['container']['document']
+      Hash.from_xml( resp.body )['container']
     end
 
   end

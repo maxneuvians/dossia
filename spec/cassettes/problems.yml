@@ -1,0 +1,581 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://staging-oauth.dossia.org/dossia-restful-api/services/v3.0/records
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization: 
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Feb 2013 23:54:09 GMT
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding,User-Agent
+      Content-Length:
+      - '1176'
+      Content-Type:
+      - application/xml
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<api:container xmlns:api=\"http://www.dossia.org/v2.0/api\"\n
+        \              xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"\n               xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n
+        \              xsi:schemaLocation=\"http://www.dossia.org/v2.0/api http://www.dossia.org/v2.0/api/container.xsd\">\n
+        \  <api:document id=\"qO7k9WDv3VSDPEwSmZ3kLYQOFlGuUcc2\">\n      <api:payload>\n
+        \        <phr:Participant type=\"Primary\">\n            <phr:FullName>XIOMARA
+        D BROWN</phr:FullName>\n            <phr:FirstName>XIOMARA</phr:FirstName>\n
+        \           <phr:MiddleName>D</phr:MiddleName>\n            <phr:LastName>BROWN</phr:LastName>\n
+        \           <phr:DateOfBirth>1931-06-18</phr:DateOfBirth>\n            <phr:Gender>Female</phr:Gender>\n
+        \           <phr:Address>\n               <phr:StreetAddress1>370 HILL ST</phr:StreetAddress1>\n
+        \              <phr:City>ALGER</phr:City>\n               <phr:State>OH</phr:State>\n
+        \              <phr:PostalCode>45812</phr:PostalCode>\n            </phr:Address>\n
+        \           <phr:Contact type=\"Email\">Xiomara@dossia.org</phr:Contact>\n
+        \        </phr:Participant>\n      </api:payload>\n   </api:document>\n</api:container>"
+    http_version: 
+  recorded_at: Sat, 02 Feb 2013 23:54:04 GMT
+- request:
+    method: get
+    uri: https://staging-oauth.dossia.org/dossia-restful-api/services/v3.0/records/qO7k9WDv3VSDPEwSmZ3kLYQOFlGuUcc2/documents/document_type/Problem
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization: 
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Feb 2013 23:54:10 GMT
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/xml
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<api:container xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n
+        \              xmlns:api=\"http://www.dossia.org/v2.0/api\"\n               xsi:schemaLocation=\"http://www.dossia.org/v2.0/api
+        http://www.dossia.org/v2.0/api/container.xsd\">\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K2whlwcAykwk\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2013-01-27</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>174</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62KycguxFiW66Y\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2013-01-27</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>185</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K6lu6Ag6Lxu3\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2013-01-27</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>153</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62KxYWiQAqyn7l\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2013-01-27</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>427.31</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K178fNiZIPhd\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2013-01-27</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>429.3</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K5faYr7UwdGh\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2013-01-27</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>440</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K2ga4Lt-zmO4\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2013-01-27</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>396</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K7fQaeJOuVMM\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2013-01-27</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>428</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K-pbfI3QIar-\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2013-01-27</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>432</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K1kSd_Nn5YWO\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2013-01-27</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>420</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62Kx0THun5TLrx\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2013-01-27</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>250</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K4uxmrptFoPQ\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-11-07</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>174</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K2DQEa7e0yO1\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-11-07</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>185</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K51wYjjS-EiN\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-11-07</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>153</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K95M9aUHMeIt\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-11-07</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>429.3</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62Kyprl5uMTwsb\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-11-07</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>427.31</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K6EOjvowwEJI\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-11-07</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>440</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K7HiEyjS2jZL\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-11-07</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>396</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62Kw6I3Hd8n9An\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-11-07</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>428</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K9CB_D0C8Nvh\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-11-07</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>432</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K4OuKBxXK6xq\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-11-07</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>250</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62KyFIZomi5aGF\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>174</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62KxPty3ol-yT8\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>185</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K3pFNm_zvA8T\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>153</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K6wFnRtcQ2aQ\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>427.31</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K9J1_0bYWNKU\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>429.3</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62Kyq1IJ8lGfOn\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>440</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K0PJUIPYjk1t\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>396</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K0xafao0wUkL\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>428</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K7CBzDlkqqZk\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>432</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62KzOCZYjydAgM\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>420</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K37sg_Y02CJY\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>250</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K4FA35d0n_Ud\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>174</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K3GrAQk2iG5R\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>185</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K4PT_uGIEKVd\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>153</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K8YTOlX8zCPF\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>427.31</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62KzPxk4LzTd0y\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>429.3</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K-Xgj8RSWDzu\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>440</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62KyI8dVT0InGc\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>396</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K0om5UTV_CwP\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>428</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K6CHrrSDIJPH\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>432</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K2H3KS7PXsK_\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>420</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K4I5Wu1uILQL\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>250</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K6mTqseKrGcE\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>174</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K6BtGYRKog8U\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>185</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K8DU1frqviU1\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>153</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K_ccbh4p2sTQ\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>427.31</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62KxVWiMpFfWCd\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>429.3</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K8l_LadJEW63\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>440</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n   <document xmlns=\"http://www.dossia.org/v2.0/api\"
+        id=\"qO7k9WDv3VRrCjHAoR62K-uixqu3mitq\"\n             type=\"Problem\"\n             version=\"0\">\n
+        \     <payload>\n         <phr:Problem xmlns:phr=\"http://www.dossia.org/v2.0/xml/phr\"
+        ProfessionallySourced=\"false\"\n                      sequence=\"1\"\n                      xsi:schemaLocation=\"http://www.dossia.org/v2.0/xml/phr
+        http://www.dossia.org/v2.0/xml/phr/problem.xsd\">\n            <phr:Origin
+        Classification=\"PHR\">\n               <phr:Organization>\n                  <phr:OrganizationName>Dossia
+        HRA</phr:OrganizationName>\n               </phr:Organization>\n            </phr:Origin>\n
+        \           <phr:Date Type=\"Actual\">\n               <phr:StartDate>2012-10-11</phr:StartDate>\n
+        \           </phr:Date>\n            <phr:Code MajorVersion=\"9\" MinorVersion=\"0\"
+        System=\"ICD\">\n               <phr:Code>396</phr:Code>\n            </phr:Code>\n
+        \        </phr:Problem>\n      </payload>\n   </document>\n</api:container>"
+    http_version: 
+  recorded_at: Sat, 02 Feb 2013 23:54:05 GMT
+recorded_with: VCR 2.4.0
