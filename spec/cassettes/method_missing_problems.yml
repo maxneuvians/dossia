@@ -18,7 +18,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 08 Feb 2013 20:08:53 GMT
+      - Fri, 08 Feb 2013 21:36:11 GMT
       Server:
       - Apache
       Vary:
@@ -43,10 +43,10 @@ http_interactions:
         \           <phr:Contact type=\"Email\">Xiomara@dossia.org</phr:Contact>\n
         \        </phr:Participant>\n      </api:payload>\n   </api:document>\n</api:container>"
     http_version: 
-  recorded_at: Fri, 08 Feb 2013 20:08:53 GMT
+  recorded_at: Fri, 08 Feb 2013 21:36:11 GMT
 - request:
     method: get
-    uri: https://staging-oauth.dossia.org/dossia-restful-api/services/v3.0/records/qO7k9WDv3VSDPEwSmZ3kLYQOFlGuUcc2/documents/document_type/Problem
+    uri: https://staging-oauth.dossia.org/dossia-restful-api/services/v3.0/records/qO7k9WDv3VSDPEwSmZ3kLYQOFlGuUcc2/documents/document_type/Problem?
     body:
       encoding: US-ASCII
       string: ''
@@ -62,7 +62,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 08 Feb 2013 20:08:53 GMT
+      - Fri, 08 Feb 2013 21:36:12 GMT
       Server:
       - Apache
       Vary:
@@ -577,5 +577,5 @@ http_interactions:
         System=\"ICD\">\n               <phr:Code>250</phr:Code>\n            </phr:Code>\n
         \        </phr:Problem>\n      </payload>\n   </document>\n</api:container>"
     http_version: 
-  recorded_at: Fri, 08 Feb 2013 20:08:53 GMT
+  recorded_at: Fri, 08 Feb 2013 21:36:12 GMT
 recorded_with: VCR 2.4.0

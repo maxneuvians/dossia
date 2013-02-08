@@ -18,7 +18,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 08 Feb 2013 20:09:49 GMT
+      - Fri, 08 Feb 2013 20:50:06 GMT
       Server:
       - Apache
       Vary:
@@ -43,5 +43,42 @@ http_interactions:
         \           <phr:Contact type=\"Email\">Xiomara@dossia.org</phr:Contact>\n
         \        </phr:Participant>\n      </api:payload>\n   </api:document>\n</api:container>"
     http_version: 
-  recorded_at: Fri, 08 Feb 2013 20:09:49 GMT
+  recorded_at: Fri, 08 Feb 2013 20:50:06 GMT
+- request:
+    method: get
+    uri: https://staging-oauth.dossia.org/dossia-restful-api/services/v3.0/records/qO7k9WDv3VSDPEwSmZ3kLYQOFlGuUcc2/documents/summary_count
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization: 
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 08 Feb 2013 20:50:06 GMT
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding,User-Agent
+      Content-Length:
+      - '601'
+      Content-Type:
+      - application/xml
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<api:summary xmlns:api=\"http://www.dossia.org/v2.0/api\"\n
+        \            xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n             xsi:schemaLocation=\"http://www.dossia.org/v2.0/api
+        http://www.dossia.org/v2.0/api/summary.xsd\">\n   <api:document count=\"184\"
+        type=\"Measurement\">\n      <api:documentversion count=\"184\" uri=\"http://www.dossia.org/v2.0/xml/phr/Measurement\"/>\n
+        \  </api:document>\n   <api:document count=\"261\" type=\"Problem\">\n      <api:documentversion
+        count=\"261\" uri=\"http://www.dossia.org/v2.0/xml/phr/Problem\"/>\n   </api:document>\n</api:summary>"
+    http_version: 
+  recorded_at: Fri, 08 Feb 2013 20:50:07 GMT
 recorded_with: VCR 2.4.0

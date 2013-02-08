@@ -43,15 +43,14 @@ module Dossia
         @access_token = OAuth::AccessToken.new( @consumer, Dossia.configuration[ :oauth_token ], Dossia.configuration[ :oauth_token_secret ] )
       end
 
-      @record = Hashie::Mash.new get('/records')['document']
+      @record = Hashie::Mash.new get('/records')['container']['document']
 
     end 
 
-    def method_missin( name, *args )
-
-      name = name.to_s
-      super unless name =~ /get_/
-      get_#{name}( args )
+    def method_missing( name, *args )
+      pieces = name.to_s.split('_')
+      super unless pieces.length == 3 and pieces.first == 'get' and pieces[1].length > 0 and pieces.last == 'documents'
+      get_documents( pieces[1], args )
 
     end
 
@@ -63,6 +62,11 @@ module Dossia
     def get( path, params = nil )
       path = "#{path}?#{params.map{|k,v|"#{k}=#{v}"}.join('&')}" if params
       parse( @access_token.get( DOSSIA_URL + '/dossia-restful-api/services/v3.0' + path ) )
+    end
+
+    def get_binary( path, params = nil )
+      path = "#{path}?#{params.map{|k,v|"#{k}=#{v}"}.join('&')}" if params
+      @access_token.get( DOSSIA_URL + '/dossia-restful-api/services/v3.0' + path )
     end
 
     def post( path, params = nil )
@@ -80,7 +84,20 @@ module Dossia
     protected
 
     def parse( resp )
-      Hash.from_xml( resp.body )['container']
+
+      case resp.code.to_i
+
+      when 200
+        Hash.from_xml( resp.body )
+
+      when 400
+        raise Dossia::BadRequestError, 'You made an invalid request'
+
+      when 404
+        raise Dossia::NotFoundError, "Resource not found"
+      
+      end
+    
     end
 
   end

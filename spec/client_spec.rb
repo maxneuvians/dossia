@@ -26,6 +26,7 @@ describe 'Client' do
   end
 
   it 'creates a valid OAuth client with passed request token' do 
+    pending
     #Dossia.new( :request_token => '' ).access_token.should be_a OAuth::AccessToken
   end
 
@@ -33,6 +34,42 @@ describe 'Client' do
     VCR.use_cassette('record') do
       Dossia.new.record.id?.should be_true
     end
+  end
+
+  it 'returns an Array for a valid missing method call' do
+    VCR.use_cassette('method_missing_problems') do
+        documents = Dossia.new.get_Problem_documents
+        documents.should be_a Array
+    end
+  end
+
+  it 'raises an error for an invalid missing method call' do
+    VCR.use_cassette('bad_method_missing') do
+        proc { documents = Dossia.new.get__documents }.
+          should raise_error NoMethodError
+    end
+  end
+
+  it 'raises an error for an unkown missing method call' do
+    VCR.use_cassette('unkown_method_missing') do
+        proc { documents = Dossia.new.get_ZORK_documents }.
+          should raise_error Dossia::NotFoundError, "Resource not found"
+    end
+  end
+
+  it 'returns a not found error if type is invalid' do
+    VCR.use_cassette('invalid') do
+      proc { Dossia.new.get_documents('ZorkWidget+++') }.
+        should raise_error Dossia::NotFoundError, "Resource not found"
+    end
+  end
+
+  it 'returns a bad request error if type is invalid' do
+    pending 
+  end
+
+  it 'returns a valid binary document' do
+    pending
   end
 
 end 
