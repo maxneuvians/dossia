@@ -13,6 +13,7 @@ InstalledFiles
 \#*
 _yardoc
 coverage
+spec/cassettes
 doc/
 lib/bundler/man
 pkg
