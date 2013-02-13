@@ -36,9 +36,16 @@ describe 'Client' do
     end
   end
 
-  it 'returns an Array for a valid missing method call' do
+  it 'returns an Array for a valid missing method call by type' do
     VCR.use_cassette('method_missing_problems') do
         documents = Dossia.new.get_Problem_documents
+        documents.should be_a Array
+    end
+  end
+
+  it 'returns an Array for a valid missing method call by type and class' do
+    VCR.use_cassette('method_missing_measurement_weight') do
+        documents = Dossia.new.get_Measurement_documents_by_Weight
         documents.should be_a Array
     end
   end
@@ -54,13 +61,6 @@ describe 'Client' do
     VCR.use_cassette('unkown_method_missing') do
         proc { documents = Dossia.new.get_ZORK_documents }.
           should raise_error Dossia::NotFoundError, "Resource not found"
-    end
-  end
-
-  it 'returns a not found error if type is invalid' do
-    VCR.use_cassette('invalid') do
-      proc { Dossia.new.get_documents('ZorkWidget+++') }.
-        should raise_error Dossia::NotFoundError, "Resource not found"
     end
   end
 
