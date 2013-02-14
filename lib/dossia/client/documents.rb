@@ -1,24 +1,28 @@
 module Dossia
   module Documents
 
+    def create_document( payload )
+
+    end
+
     # Returns a specific application document by ID
     #
     # id  - ID of application document
     #
     def get_application_document( id )
-       get_binary '/records/' + @record.id.to_s + '/apps/documents/key/' + id
+       get_binary '/records/' + @record_id + '/apps/documents/key/' + id
     end
 
     # Returns metadata on all application documents
     #
     def get_application_documents_metadata
-      Hashie::Mash.new( get('/records/' + @record.id.to_s + '/apps/documents/meta') )['container']['document']
+      get '/records/' + @record_id + '/apps/documents/meta' 
     end
 
     # Returns a count of all documents in the record
     #
     def get_document_count
-      Hashie::Mash.new( get('/records/' + @record.id.to_s + '/documents/summary_count') )['summary']['document']
+      get '/records/' + @record_id + '/documents/summary_count'
     end
 
     # Returns a specific document by ID and version
@@ -28,9 +32,9 @@ module Dossia
     #
     def get_document_by_id( id, version = nil )
       if version
-        Hashie::Mash.new( get('/records/' + @record.id.to_s + '/documents/' + id + '/versions/' + version ) )['container']['document']
+        get '/records/' + @record_id + '/documents/' + id + '/versions/' + version 
       else
-        Hashie::Mash.new( get('/records/' + @record.id.to_s + '/documents/' + id ) )['container']['document']
+        get '/records/' + @record_id + '/documents/' + id 
       end
     end
 
@@ -39,7 +43,7 @@ module Dossia
     # id  - ID of document
     #
     def get_document_metadata( id, args = nil )
-      Hashie::Mash.new( get('/records/' + @record.id.to_s + '/documents/' + id + '/meta', args) )['container']['document']
+      get( '/records/' + @record_id + '/documents/' + id + '/meta', args )
     end
 
     # Returns a specific document's parents by ID
@@ -47,7 +51,7 @@ module Dossia
     # id  - ID of document
     #
     def get_document_parent( id, args = nil )
-      Hashie::Mash.new( get('/records/' + @record.id.to_s + '/documents/' + id + '/parent', args) )['container']['document']
+      get( '/records/' + @record_id + '/documents/' + id + '/parent', args )
     end
 
     # Returns a collection of documents
@@ -61,23 +65,19 @@ module Dossia
     def get_documents( type = nil, klass = nil, args = nil )
 
       if type and klass
-        d = Hashie::Mash.new( get('/records/' + @record.id.to_s + '/documents/document_type/' + type.capitalize + '/class/' + klass.capitalize, args) )['container']['document']
+        get( '/records/' + @record_id + '/documents/document_type/' + type.capitalize + '/class/' + klass.capitalize, args) 
       elsif type
-        d = Hashie::Mash.new( get('/records/' + @record.id.to_s + '/documents/document_type/' + type.capitalize, args) )['container']['document']
+        get( '/records/' + @record_id + '/documents/document_type/' + type.capitalize, args )
       else
-        d = Hashie::Mash.new( get('/records/' + @record.id.to_s + '/documents/', args) )['container']['document']
+        get( '/records/' + @record_id + '/documents/', args )
       end
-
-      # Turn documents into a collection if the result is only one
-      d = Array.new.push d unless d.kind_of? Array
-      d
 
     end
 
     # Returns metadata on all application documents
     #
     def get_documents_metadata
-      Hashie::Mash.new( get('/records/' + @record.id.to_s + '/documents/meta') )['container']['document']
+      get '/records/' + @record_id + '/documents/meta' 
     end
 
     # Suppresses a specific application document by ID
@@ -85,7 +85,7 @@ module Dossia
     # id  - ID of application document
     #
     def suppress_document( id )
-      delete('/records/' + @record.id.to_s + '/documents/' + id)
+      delete '/records/' + @record_id + '/documents/' + id 
     end
 
     # Unsuppresses a specific application document by ID
@@ -93,7 +93,7 @@ module Dossia
     # id  - ID of application document
     #
     def unsuppress_document( id )
-      post('/records/' + @record.id.to_s + '/documents/' + id + '/unsuppress')
+      post '/records/' + @record_id + '/documents/' + id + '/unsuppress' 
     end
 
   end

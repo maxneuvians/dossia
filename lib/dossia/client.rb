@@ -5,6 +5,7 @@ require 'dossia/client/users'
 require 'oauth'
 require 'active_support/core_ext'
 require 'hashie'
+require 'nokogiri'
 
 module Dossia
 
@@ -57,7 +58,8 @@ module Dossia
       end
 
       # Initializes the record variable with the Dossia user information
-      @record = Hashie::Mash.new get('/records')['container']['document']
+      @record     = get('/records')
+      @record_id  = @record.xpath('//api:document').first['id'] 
 
     end 
 
@@ -110,6 +112,17 @@ module Dossia
       parse( @access_token.post( DOSSIA_URL + '/dossia-restful-api/services/v3.0' + path, params ) )
     end
 
+    # Allows the client to initiate a POST request with binary content
+    #
+    # path    - Path to use call request on
+    # type    - POST body content type
+    # length  - POST body length
+    # body    - POST body content
+    #
+    def post_binary( path, type = nil, length = nil, body = nil )
+      #parse( @access_token.post( DOSSIA_URL + '/dossia-restful-api/services/v3.0' + path, params ) )
+    end
+
     # Allows the client to initiate a PUT request
     #
     # path    - Path to use call request on
@@ -142,7 +155,7 @@ module Dossia
         case resp.content_type
 
         when 'application/xml'
-          Hash.from_xml( resp.body )
+          Nokogiri::XML( resp.body ) 
         when 'application/json'
           Hash.from_json( resp.body )
         else

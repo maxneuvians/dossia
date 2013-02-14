@@ -2,6 +2,16 @@ require 'spec_helper'
 
 describe 'Documents' do 
 
+  context ".create_document" do
+    
+    it 'creates a new document' do 
+
+      pending
+
+    end 
+
+  end
+
   context ".get_documents" do
 
     it 'returns an array of the document tree' do
