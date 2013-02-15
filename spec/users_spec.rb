@@ -8,7 +8,6 @@ describe 'Users' do
       VCR.use_cassette('record') do
         user = Dossia.new.user
         user.should be_a Hashie::Mash
-        user.type.should be_true
         user.FullName.should be_true
         user.FirstName.should be_true
         user.LastName.should be_true

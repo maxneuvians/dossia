@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'active_support'
-gem 'i18n'
 gem 'builder'
 gem 'hashie'
+gem 'json'
 gem 'nokogiri'
 gem 'oauth'
+
 
 group :test do
 

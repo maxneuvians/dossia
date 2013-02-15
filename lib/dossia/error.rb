@@ -1,6 +1,7 @@
 module Dossia
 
   class Error               < StandardError; end
+  class BadArgumentError    < Error; end
   class BadRequestError     < Error; end
   class ConfigurationError  < Error; end
   class MethodError         < Error; end

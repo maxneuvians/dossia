@@ -1,10 +1,12 @@
 require 'dossia/client'
 require 'dossia/client/documents'
+require 'dossia/client/nokogiri_to_hash'
 require 'dossia/client/users'
+require 'dossia/client/utils'
 
 require 'oauth'
-require 'active_support/core_ext'
 require 'hashie'
+require 'json'
 require 'nokogiri'
 
 module Dossia
@@ -16,6 +18,7 @@ module Dossia
 
     include Dossia::Documents
     include Dossia::Users
+    include Dossia::Utils
 
     # Allows read access to the access_token variable
     #
@@ -106,20 +109,20 @@ module Dossia
     # Allows the client to initiate a POST request
     #
     # path    - Path to use call request on
-    # params  - POST params to be sent with the URL 
+    # body    - POST body to be sent with the URL 
     #
-    def post( path, params = nil )
-      parse( @access_token.post( DOSSIA_URL + '/dossia-restful-api/services/v3.0' + path, params ) )
+    def post( path, body = nil )
+      body ? length = body.length.to_s : length = '0' 
+      parse( @access_token.post( DOSSIA_URL + '/dossia-restful-api/services/v3.0' + path, body, { 'Content-Type' => 'application/xml', 'Content-Length' => length } ) )
     end
 
     # Allows the client to initiate a POST request with binary content
     #
     # path    - Path to use call request on
     # type    - POST body content type
-    # length  - POST body length
     # body    - POST body content
     #
-    def post_binary( path, type = nil, length = nil, body = nil )
+    def post_binary( path, type = nil, body = nil )
       #parse( @access_token.post( DOSSIA_URL + '/dossia-restful-api/services/v3.0' + path, params ) )
     end
 
@@ -155,18 +158,19 @@ module Dossia
         case resp.content_type
 
         when 'application/xml'
-          Nokogiri::XML( resp.body ) 
+          Nokogiri::XML resp.body  
         when 'application/json'
-          Hash.from_json( resp.body )
+          Hashie::Mash.new( Hash.from_json( resp.body ) )
         else
-          resp
+          #Fix when Dossia does not send proper content_type for XML
+          resp.body[0] == '<' ? Nokogiri::XML(resp.body) : resp
         end
 
       when 400
         raise Dossia::BadRequestError, 'You made an invalid request'
 
       when 404
-        raise Dossia::NotFoundError, "Resource not found"
+        raise Dossia::NotFoundError, resp.body
       
       end
     

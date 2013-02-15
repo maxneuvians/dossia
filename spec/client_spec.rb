@@ -32,21 +32,21 @@ describe 'Client' do
 
   it 'responds with a user ID' do 
     VCR.use_cassette('record') do
-      Dossia.new.record.id?.should be_true
+      Dossia.new.record.xpath('//api:document').first['id'].should be_true
     end
   end
 
-  it 'returns an Array for a valid missing method call by type' do
+  it 'returns an Nokogiri::XML::NodeSet for a valid missing method call by type' do
     VCR.use_cassette('method_missing_problems') do
         documents = Dossia.new.get_Problem_documents
-        documents.should be_a Array
+        documents.should be_a Nokogiri::XML::NodeSet
     end
   end
 
-  it 'returns an Array for a valid missing method call by type and class' do
+  it 'returns an Nokogiri::XML::NodeSet for a valid missing method call by type and class' do
     VCR.use_cassette('method_missing_measurement_weight') do
         documents = Dossia.new.get_Measurement_documents_by_Weight
-        documents.should be_a Array
+        documents.should be_a Nokogiri::XML::NodeSet
     end
   end
 
@@ -60,7 +60,7 @@ describe 'Client' do
   it 'raises an error for an unkown missing method call' do
     VCR.use_cassette('unkown_method_missing') do
         proc { documents = Dossia.new.get_ZORK_documents }.
-          should raise_error Dossia::NotFoundError, "Resource not found"
+          should raise_error Dossia::NotFoundError
     end
   end
 

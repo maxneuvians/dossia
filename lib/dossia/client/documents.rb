@@ -1,8 +1,15 @@
 module Dossia
   module Documents
 
+    # Accepts XML and sends it to the documents end point
+    #
+    # payload - Payload object that contains XML (either string or object) 
+    #
     def create_document( payload )
-
+      if !payload.kind_of? String
+        payload = payload.to_xml
+      end
+      post( '/records/' + @record_id + '/documents', payload ).xpath('//api:document').first
     end
 
     # Returns a specific application document by ID
@@ -16,13 +23,13 @@ module Dossia
     # Returns metadata on all application documents
     #
     def get_application_documents_metadata
-      get '/records/' + @record_id + '/apps/documents/meta' 
+      get( '/records/' + @record_id + '/apps/documents/meta' ).xpath('//api:document')
     end
 
     # Returns a count of all documents in the record
     #
     def get_document_count
-      get '/records/' + @record_id + '/documents/summary_count'
+      get('/records/' + @record_id + '/documents/summary_count').xpath('//api:document')
     end
 
     # Returns a specific document by ID and version
@@ -32,9 +39,9 @@ module Dossia
     #
     def get_document_by_id( id, version = nil )
       if version
-        get '/records/' + @record_id + '/documents/' + id + '/versions/' + version 
+        get( '/records/' + @record_id + '/documents/' + id + '/versions/' + version ).xpath('//api:document').first
       else
-        get '/records/' + @record_id + '/documents/' + id 
+        get( '/records/' + @record_id + '/documents/' + id ).xpath('//api:document').first
       end
     end
 
@@ -43,7 +50,7 @@ module Dossia
     # id  - ID of document
     #
     def get_document_metadata( id, args = nil )
-      get( '/records/' + @record_id + '/documents/' + id + '/meta', args )
+      get( '/records/' + @record_id + '/documents/' + id + '/meta', args ).xpath('//api:document').first
     end
 
     # Returns a specific document's parents by ID
@@ -51,7 +58,7 @@ module Dossia
     # id  - ID of document
     #
     def get_document_parent( id, args = nil )
-      get( '/records/' + @record_id + '/documents/' + id + '/parent', args )
+      get( '/records/' + @record_id + '/documents/' + id + '/parent', args ).xpath('//api:document')
     end
 
     # Returns a collection of documents
@@ -65,11 +72,11 @@ module Dossia
     def get_documents( type = nil, klass = nil, args = nil )
 
       if type and klass
-        get( '/records/' + @record_id + '/documents/document_type/' + type.capitalize + '/class/' + klass.capitalize, args) 
+        get( '/records/' + @record_id + '/documents/document_type/' + type.capitalize + '/class/' + klass.capitalize, args).xpath('//api:document')
       elsif type
-        get( '/records/' + @record_id + '/documents/document_type/' + type.capitalize, args )
+        get( '/records/' + @record_id + '/documents/document_type/' + type.capitalize, args ).xpath('//api:document')
       else
-        get( '/records/' + @record_id + '/documents/', args )
+        get( '/records/' + @record_id + '/documents/', args ).xpath('//api:document')
       end
 
     end
@@ -77,7 +84,7 @@ module Dossia
     # Returns metadata on all application documents
     #
     def get_documents_metadata
-      get '/records/' + @record_id + '/documents/meta' 
+      get( '/records/' + @record_id + '/documents/meta' ).xpath('//api:document')
     end
 
     # Suppresses a specific application document by ID
@@ -93,7 +100,7 @@ module Dossia
     # id  - ID of application document
     #
     def unsuppress_document( id )
-      post '/records/' + @record_id + '/documents/' + id + '/unsuppress' 
+      post '/records/' + @record_id + '/documents/' + id + '/unsuppress'
     end
 
   end
