@@ -1,8 +1,9 @@
-require 'dossia/client'
-require 'dossia/client/documents'
-require 'dossia/client/nokogiri_to_hash'
-require 'dossia/client/users'
-require 'dossia/client/utils'
+require_relative 'client'
+require_relative 'client/documents'
+require_relative 'client/application_documents'
+require_relative 'client/nokogiri_to_hash'
+require_relative 'client/users'
+require_relative 'client/utils'
 
 require 'oauth'
 require 'hashie'
@@ -16,6 +17,7 @@ module Dossia
     #Assumes client will be in staging if not specified otherwise
     DOSSIA_URL = ENV['DOSSIA_URL'] || 'https://staging-oauth.dossia.org'
 
+    include Dossia::ApplicationDocuments
     include Dossia::Documents
     include Dossia::Users
     include Dossia::Utils
@@ -123,16 +125,7 @@ module Dossia
     # body    - POST body content
     #
     def post_binary( path, type = nil, body = nil )
-      #parse( @access_token.post( DOSSIA_URL + '/dossia-restful-api/services/v3.0' + path, params ) )
-    end
-
-    # Allows the client to initiate a PUT request
-    #
-    # path    - Path to use call request on
-    # params  - PUT params to be sent with the URL 
-    #
-    def put( path, params = nil )
-      parse( @access_token.put( DOSSIA_URL + '/dossia-restful-api/services/v3.0' + path, params ) )
+      parse( @access_token.post( DOSSIA_URL + '/dossia-restful-api/services/v3.0' + path, body, { 'Content-Type' => type, 'Content-Length' => body.length.to_s } ) )
     end
 
     # Allows read access to the record variable
@@ -160,9 +153,9 @@ module Dossia
         when 'application/xml'
           Nokogiri::XML resp.body  
         when 'application/json'
-          Hashie::Mash.new( Hash.from_json( resp.body ) )
+          Hashie::Mash.new( JSON::parse( resp.body ) )
         else
-          #Fix when Dossia does not send proper content_type for XML
+          #Dirty fix when Dossia does not send proper content_type for XML
           resp.body[0] == '<' ? Nokogiri::XML(resp.body) : resp
         end
 

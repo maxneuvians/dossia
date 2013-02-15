@@ -23,7 +23,7 @@ describe 'Utils' do
 
     end
 
-    it 'removes unique identification attributes from a document' do
+    it 'removes unique identification attributes from documents' do
 
       VCR.use_cassette('test_scrub_documents') do
 
@@ -68,7 +68,7 @@ describe 'Utils' do
 
     end
 
-    it 'wraps a document in a Dossia API friendly XML container' do
+    it 'wraps documents in a Dossia API friendly XML container' do
 
       VCR.use_cassette('test_documents_wrap_container') do
 

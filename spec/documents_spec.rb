@@ -4,6 +4,14 @@ describe 'Documents' do
 
   let(:client){ Dossia.new }
 
+  context ".attach_binary" do
+    
+    it 'attaches a binary file to a document' do
+      pending
+    end
+
+  end
+
   context ".create_document" do
     
     it 'creates a new document with Document object' do 
@@ -33,6 +41,21 @@ describe 'Documents' do
         document['id'].should be_true
       end
     end 
+
+    it 'creates a new document with XML string and relates it to parent' do 
+      VCR.use_cassette('create_document_xml_string_and_parent') do
+        documents  = client.get_documents(nil, nil, { :limit => 2 } )
+
+        parent  = documents.first
+        child   = documents.last
+        
+        child = client.scrub_document( child )
+        child = client.wrap_container( child )
+
+        document = client.create_document( child.to_xml, parent )
+        document['id'].should be_true
+      end
+    end
 
   end
 
@@ -125,7 +148,7 @@ describe 'Documents' do
       VCR.use_cassette('document_metadata') do
 
         documents = client.get_documents
-         id = documents.first['id']
+        id = documents.first['id']
 
         document = client.get_document_metadata( id )
         document.should be_a Nokogiri::XML::Element
@@ -137,8 +160,40 @@ describe 'Documents' do
 
   context ".get_document_parent" do
     
-    it 'returns a Hashie::Mash of a particular document parent' do
-      pending
+    it 'returns a Nokogiri::XML::NodeSet of a particular document parents' do
+      VCR.use_cassette('document_parents') do
+        documents  = client.get_documents(nil, nil, { :limit => 2 } )
+
+        parent  = documents.first
+        child   = documents.last
+        
+        child = client.scrub_document( child )
+        child = client.wrap_container( child )
+
+        document = client.create_document( child.to_xml, parent )
+        document['id'].should be_true
+
+        parents = client.get_document_parents( document['id'] )
+        parents.first['id'].should eql parent['id']
+        parents.should be_a Nokogiri::XML::NodeSet
+
+      end
+    end
+
+  end
+
+  context ".get_document_versions" do
+    
+    it "returns a Nokogiri::XML::NodeSet of a particular document's versions" do
+      VCR.use_cassette('document_versions') do
+
+        documents = client.get_documents(nil, nil, { :limit => 1 })
+        id = documents.first['id']
+
+        document = client.get_document_versions( id )
+        document.should be_a Nokogiri::XML::NodeSet
+
+      end
     end
 
   end
@@ -154,30 +209,82 @@ describe 'Documents' do
 
   end
 
-  context ".get_application_document" do
+  context ".relate_documents" do
+    
+    it 'relates two documents by document objects' do 
+      VCR.use_cassette('relate_documents') do
+        documents  = client.get_documents(nil, nil, { :limit => 2 } )
 
-    it 'returns a particular application document' do
-      VCR.use_cassette('application_document') do
+        parent  = documents.first
+        child   = documents.last
 
-        documents = client.get_application_documents_metadata
-        id = documents.first['id']
+        resp = client.relate_documents( parent, child )
+        pending
+      end
+    end
 
-        response = client.get_application_document( id )
-        response.code.to_i.should eql 200
+    it 'relates two documents by parent id string and child object' do 
+      VCR.use_cassette('relate_documents') do
+        documents  = client.get_documents(nil, nil, { :limit => 2 } )
 
+        parent  = documents.first
+        child   = documents.last
+
+        resp = client.relate_documents( parent['id'], child )
+        pending
+      end
+    end
+
+    it 'relates two documents by parent object and child id string' do 
+      VCR.use_cassette('relate_documents') do
+        documents  = client.get_documents(nil, nil, { :limit => 2 } )
+
+        parent  = documents.first
+        child   = documents.last
+
+        resp = client.relate_documents( parent, child['id'] )
+        pending
       end
     end
 
   end
 
-  context ".get_application_documents_metadata" do
+  context ".replace_document" do
+    
+    it 'replaces an existing document with Document object as id to be replaced' do 
+      VCR.use_cassette('replace_document') do
+        old_document  = client.get_documents(nil, nil, { :limit => 1 } ).first
 
-    it 'returns an Nokogiri::XML::NodeSet of a all application documents metadata' do
-      VCR.use_cassette('application_documents_metadata') do
-        documents = client.get_application_documents_metadata
-        documents.should be_a Nokogiri::XML::NodeSet
+        version = old_document['version'].to_i
+
+        old_document.at( '//phr:Date/phr:StartDate', 'phr' => 'http://www.dossia.org/v2.0/xml/phr' ).content = Date.today.strftime('%Y-%m-%d')
+
+        new_document = client.scrub_document( old_document )
+        new_document = client.wrap_container( old_document )
+
+        document = client.replace_document( old_document, new_document )
+        document['id'].should be_true
+        document['version'].should eql (version + 1).to_s
       end
     end
+
+    it 'replaces an existing document with XML string' do 
+      VCR.use_cassette('replace_document_xml_string') do
+        old_document  = client.get_documents(nil, nil, { :limit => 1 } ).first
+
+        id        = old_document['id']
+        version   = old_document['version'].to_i
+
+        old_document.at( '//phr:Date/phr:StartDate', 'phr' => 'http://www.dossia.org/v2.0/xml/phr' ).content = Date.today.strftime('%Y-%m-%d')
+        
+        new_document = client.scrub_document( old_document )
+        new_document = client.wrap_container( old_document )
+
+        document = client.replace_document( old_document, new_document )
+        document['id'].should be_true
+        document['version'].should eql (version + 1).to_s
+      end
+    end 
 
   end
 

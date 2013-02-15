@@ -1,6 +1,6 @@
-require 'dossia/version'
-require 'dossia/error'
-require 'dossia/client'
+require_relative 'dossia/version'
+require_relative 'dossia/error'
+require_relative 'dossia/client'
 
 module Dossia
 

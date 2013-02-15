@@ -3,11 +3,6 @@ require 'spec_helper'
 describe 'Client' do 
 
   it 'raises ConfigurationError on invalid config parameter' do
-    proc { Dossia::Client.new( {} ) }.
-      should raise_error Dossia::ConfigurationError, "Client needs to be configured"
-  end
-
-  it 'raises ConfigurationError on invalid config parameter' do
 
     proc { Dossia::Client.new(nil) }.
       should raise_error Dossia::ConfigurationError, "Options hash required"

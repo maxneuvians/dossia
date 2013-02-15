@@ -8,7 +8,7 @@ module Dossia
     def scrub_document( payload )
 
       raise Dossia::BadArgumentError, 'This method expects a Nokogiri NodeSet or Element' unless payload.class == Nokogiri::XML::NodeSet or payload.class == Nokogiri::XML::Element
-
+      payload = payload.clone
       if payload.class == Nokogiri::XML::NodeSet    
         payload.each { |node| node = self.scrub_document( node ) }
       else
